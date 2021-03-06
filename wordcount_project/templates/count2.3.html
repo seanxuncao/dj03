@@ -1,0 +1,11 @@
+<H1>Word Count {{ len }}</H1>
+<a href="{% url 'home' %}">restart count</a>
+<H2>your words:</H2>
+{{ words }}
+
+<hr />
+{% for word, counts in worddict %}
+    {{ word }} - {{ counts }}
+    <br />
+{% endfor %}
+

@@ -1,0 +1,16 @@
+<H1>Word Count {{ len }}</H1>
+<a href="{% url 'home' %}">restart count</a>
+<H2>your words:</H2>
+<form action="{% url 'count' %}">
+    <textarea cols="100" rows="10" name="fulltext">{{ words }}</textarea>
+    <br />
+    <input type="submit" value="count!" />
+</form>
+
+
+<hr />
+{% for word, counts in worddict %}
+    {{ word }} - {{ counts }}
+    <br />
+{% endfor %}
+
